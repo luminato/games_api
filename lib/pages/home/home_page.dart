@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:get/state_manager.dart';
+
+import '../../controllers/home_controller.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text("Home"),
-      ),
+    return GetBuilder<HomeController>(
+      init: HomeController(),
+      initState: (_) {},
+      builder: (_) {
+        return Scaffold(
+          body: Center(
+            child: Text("Home"),
+          ),
+        );
+      },
     );
   }
 }
