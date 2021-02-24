@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 
 import '../../controllers/home_controller.dart';
+import '../../pages/home/home_widgets/home_list_games.dart';
+
 
 class HomePage extends StatelessWidget {
   @override
@@ -11,9 +13,7 @@ class HomePage extends StatelessWidget {
       initState: (_) {},
       builder: (_) {
         return Scaffold(
-          body: Center(
-            child: Text("Home"),
-          ),
+          body: HomeList()
         );
       },
     );
