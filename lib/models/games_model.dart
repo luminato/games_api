@@ -17,7 +17,7 @@ class GamesModel {
     return GamesModel(
       id: json['id'],
       name: json['name'],
-      totalRating: json['total_rating'],
+      totalRating: json['rating'],
       screenshot: json['screenshots']
     );
   }

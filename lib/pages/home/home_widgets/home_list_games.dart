@@ -9,12 +9,18 @@ class HomeList extends StatelessWidget {
     return GetBuilder<HomeController>(
       id: 'games',
       builder: (_) {
+        if (_.loading) {
+          return Center(child: LinearProgressIndicator());
+        }
         return ListView.builder(
           itemBuilder: (context, index) {
             final GamesModel games = _.games[index];
-            return ListTile(
-              title: Text(games.id.toString()),
-              subtitle: Text(games.name),
+            return Card(
+              //shadowColor: Colors.black,
+              child: ListTile(
+                title: Text(games.name),
+                subtitle: Text(games.totalRating.toStringAsFixed(1)),
+              ),
             );
           },
           itemCount: _.games.length,
