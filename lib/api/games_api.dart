@@ -26,9 +26,7 @@ class GamesApi {
           },
         ),
         queryParameters: {
-          'fields': 'name, cover.image_id,'
-              ' genres.name, rating, summary,'
-              ' total_rating, release_dates.platform;'
+          'fields': '$FielsGames'
               'where release_dates.platform = (${g.join(",")}) & cover != null & total_rating >= 80 & rating != null;'
               'sort rating desc',
         },

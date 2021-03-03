@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:gamesapi/controllers/info_games_controller.dart';
 import 'package:gamesapi/pages/info_games/info_games_widgets/info_banner.dart';
 import 'package:gamesapi/pages/info_games/info_games_widgets/info_image_profile.dart';
-import 'package:gamesapi/pages/info_games/info_games_widgets/info_similar.dart';
 import 'package:gamesapi/pages/info_games/info_games_widgets/info_spec.dart';
 import 'package:gamesapi/pages/info_games/info_games_widgets/info_summary.dart';
 import 'package:get/state_manager.dart';
@@ -35,10 +34,6 @@ class InfoGames extends StatelessWidget {
               Positioned(
                 top: Get.height*0.50,
                 child: InfoSummary(),),
-              Positioned(
-                top: Get.height*0.80,
-                child: SimilarGames(),
-                )
             ],
           ),
         );

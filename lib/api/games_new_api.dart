@@ -27,9 +27,9 @@ class NewGamesApi {
                 },
               ),
               queryParameters: {
-                'fields': 'name, cover.image_id, platforms.platform_logo.url,'
-                    ' genres.name, first_release_date, release_dates.human, age_ratings.*, rating,'
-                    ' total_rating; where cover != null & release_dates.human != null & release_dates.human != "TBD" & release_dates.platform = (${g.join(",")}); sort first_release_date desc;',
+                'fields': '$FielsGames' 
+                'where cover != null & release_dates.human != null & release_dates.human != "TBD" & release_dates.platform = (${g.join(",")});'
+                'sort first_release_date desc;',
               },
               data: data);
 
