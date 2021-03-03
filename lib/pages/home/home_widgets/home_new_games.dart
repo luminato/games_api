@@ -15,7 +15,7 @@ class FreeGames extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(15),
               child: Text('New Games',
               style: Theme.of(context).textTheme.headline4
               ),
@@ -47,7 +47,7 @@ class FreeGames extends StatelessWidget {
                                fit: BoxFit.cover,
                                ),
                           ),
-                          SizedBox(height: 8,),
+                          SizedBox(height: 4,),
                           Center(
                             child: Container(
                               alignment: Alignment.center,
@@ -62,7 +62,7 @@ class FreeGames extends StatelessWidget {
                     ),
                   );
                 },
-                itemCount: _.games.length,
+                itemCount: _.newGames.length,
               ),
             ),
           ],

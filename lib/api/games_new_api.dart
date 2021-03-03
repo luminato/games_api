@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:gamesapi/models/games_model.dart';
+import 'package:gamesapi/controllers/home_controller.dart';
 import 'package:gamesapi/models/new_games_models.dart';
+
+final HomeController home = HomeController();
 
 class NewGamesApi {
   NewGamesApi._internal();
@@ -10,6 +12,8 @@ class NewGamesApi {
   final _dio = Dio();
 
   var data = {};
+
+  List<int> g = home.platform;
 
   Future<List<NewGamesModel>> getGames() async {
     try {
@@ -24,7 +28,7 @@ class NewGamesApi {
               queryParameters: {
                 'fields': 'name, cover.image_id, platforms.platform_logo.url,'
                     ' genres.name, first_release_date, release_dates.human, age_ratings.*, rating,'
-                    ' total_rating; where cover != null & release_dates.human != null & release_dates.human != "TBD"; sort first_release_date desc;',
+                    ' total_rating; where cover != null & release_dates.human != null & release_dates.human != "TBD" & release_dates.platform = (${g.join(",")}); sort first_release_date desc;',
               },
               data: data);
 

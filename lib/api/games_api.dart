@@ -1,5 +1,8 @@
 import 'package:dio/dio.dart';
+import 'package:gamesapi/controllers/home_controller.dart';
 import 'package:gamesapi/models/games_model.dart';
+
+final HomeController home = HomeController();
 
 class GamesApi {
   GamesApi._internal();
@@ -8,7 +11,7 @@ class GamesApi {
 
   final _dio = Dio();
 
-  var data = {};
+  List<int> g = home.platform;
 
   Future<List<GamesModel>> getGames() async {
     try {
@@ -22,9 +25,11 @@ class GamesApi {
           },
         ),
         queryParameters: {
-          'fields': 'name, cover.image_id, platforms.platform_logo.url,'
+          'fields': 'name, cover.image_id,'
               ' genres.name, release_dates.human, age_ratings.*, rating,'
-              ' total_rating; where cover != null & rating <= 96 & total_rating >= 80 & rating != null; sort rating desc',
+              ' total_rating, release_dates.platform;'
+              'where release_dates.platform = (${g.join(",")}) & cover != null & total_rating >= 80 & rating != null;'
+              'sort rating desc',
         },
         //data: data
       );
@@ -39,3 +44,14 @@ class GamesApi {
     }
   }
 }
+
+/*
+48 - ps4
+49 - xbox one
+6 - pc
+14 - mac
+3 - linux
+39 - ios
+34 - android
+11 - xbox
+*/
