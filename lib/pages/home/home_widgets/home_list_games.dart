@@ -39,13 +39,6 @@ class HomeList extends StatelessWidget {
                       margin: EdgeInsets.symmetric(horizontal: 5),
                       elevation: 5,
                       shadowColor: Colors.purple,
-                      //shadowColor: Colors.black,
-                      // child: ListTile(
-                      //   leading: Image.network(
-                      //       'http://images.igdb.com/igdb/image/upload/t_thumb/${games.cover}.jpg'),
-                      //   title: Text(games.name),
-                      //   subtitle: Text(games.totalRating.toStringAsFixed(1)),
-                      // ),
                       child: Column(
                         children: [
                           ClipRRect(

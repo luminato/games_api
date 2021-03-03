@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:gamesapi/controllers/home_controller.dart';
+import 'package:gamesapi/key/api_key.dart';
 import 'package:gamesapi/models/games_model.dart';
 
 final HomeController home = HomeController();
@@ -20,13 +21,13 @@ class GamesApi {
 
         options: Options(
           headers: {
-            'Client-ID': '571ekq8zfqvw6hwqsodig6fivev5nh',
-            'Authorization': 'Bearer' + ' 4y257vkv0pkzg1wyvl342pbvppl9mg'
+            'Client-ID': ClientID,
+            'Authorization': Autorization
           },
         ),
         queryParameters: {
           'fields': 'name, cover.image_id,'
-              ' genres.name, release_dates.human, age_ratings.*, rating,'
+              ' genres.name, rating, summary,'
               ' total_rating, release_dates.platform;'
               'where release_dates.platform = (${g.join(",")}) & cover != null & total_rating >= 80 & rating != null;'
               'sort rating desc',

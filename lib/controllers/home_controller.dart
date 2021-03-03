@@ -77,6 +77,6 @@ class HomeController extends GetxController {
   }
 
   showInfoGames(GamesModel games) {
-    Get.to(InfoGames(), arguments: games);
+    Get.to(() => InfoGames(), arguments:[ games, games.id]);
   }
 }

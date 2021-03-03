@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:gamesapi/controllers/home_controller.dart';
+import 'package:gamesapi/key/api_key.dart';
 import 'package:gamesapi/models/new_games_models.dart';
 
 final HomeController home = HomeController();
@@ -21,8 +22,8 @@ class NewGamesApi {
           await this._dio.post('https://api.igdb.com/v4/games',
               options: Options(
                 headers: {
-                  'Client-ID': '571ekq8zfqvw6hwqsodig6fivev5nh',
-                  'Authorization': 'Bearer' + ' 4y257vkv0pkzg1wyvl342pbvppl9mg'
+                  'Client-ID': ClientID,
+                  'Authorization': Autorization
                 },
               ),
               queryParameters: {
