@@ -10,11 +10,14 @@ class InfoImageProfile extends StatelessWidget {
       id : 'imageProfile',
       initState: (_) {},
       builder: (_) {
-        return Container(
-          height: Get.height*0.25,
-          width: Get.width*0.35,
-          child: Image.network('http://images.igdb.com/igdb/image/upload/t_cover_big/${_.games.cover}.jpg',
-          fit: BoxFit.cover,),
+        return Hero(
+          tag: 'cover',
+          child: Container(
+            height: Get.height*0.25,
+            width: Get.width*0.35,
+            child: Image.network('http://images.igdb.com/igdb/image/upload/t_cover_big/${_.games != null ? _.games.cover : _.newGames.cover}.jpg',
+            fit: BoxFit.cover,),
+          ),
         );
       },
     );

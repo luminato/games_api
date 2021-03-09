@@ -33,6 +33,7 @@ dependencies:
   dio: ^3.0.10
   http: ^0.12.2
   youtube_player_flutter: ^7.0.0+7
+  
 
 
 

@@ -27,8 +27,8 @@ class NewGamesApi {
                 },
               ),
               queryParameters: {
-                'fields': '$FielsGames' 
-                'where cover != null & release_dates.human != null & release_dates.human != "TBD" & release_dates.platform = (${g.join(",")});'
+                'fields': '$FieldsGames' 
+                'where cover != null & release_dates.human != null & first_release_date < 1617498675 & release_dates.human != "TBD" & release_dates.platform = (${g.join(",")});'
                 'sort first_release_date desc;',
               },
               data: data);

@@ -10,10 +10,25 @@ class InfoSummary extends StatelessWidget {
       id: 'summary',
       initState: (_) {},
       builder: (_) {
-        return Container(
-          height: Get.height*0.40,
-          width: Get.width*0.95,
-          child: Text(_.games.summary),
+        return SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Story',
+              style: TextStyle(
+                  fontSize: 20
+                ),),
+              SizedBox(height: Get.height*0.02),
+              Container(
+                // height: Get.height*0.30,
+                width: Get.width*0.92,
+                child: Text(_.games != null ? _.games.summary : _.newGames.summary, 
+                style: TextStyle(
+                  fontSize: 16
+                ),),
+              ),
+            ],
+          ),
         );
       },
     );

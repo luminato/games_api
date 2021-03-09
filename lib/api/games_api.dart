@@ -20,15 +20,12 @@ class GamesApi {
         'https://api.igdb.com/v4/games',
 
         options: Options(
-          headers: {
-            'Client-ID': ClientID,
-            'Authorization': Autorization
-          },
+          headers: {'Client-ID': ClientID, 'Authorization': Autorization},
         ),
         queryParameters: {
-          'fields': '$FielsGames'
-              'where release_dates.platform = (${g.join(",")}) & cover != null & total_rating >= 80 & rating != null;'
-              'sort rating desc',
+          'fields': '$FieldsGames'
+              'where release_dates.platform = (${g.join(",")}) & first_release_date > 1520125874607 & total_rating >= 80 & rating >= 80 & total_rating_count >= 1000 & screenshots != null;'
+              'sort rating desc; limit 20;',
         },
         //data: data
       );

@@ -29,7 +29,7 @@ class FreeGames extends StatelessWidget {
                   if (_.loading) {
                     return Center(child: LinearProgressIndicator());
                   }
-                  return Container(
+                  return GestureDetector(
                     child: Card(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
@@ -60,6 +60,7 @@ class FreeGames extends StatelessWidget {
                         ]
                         ),
                     ),
+                    onTap: () => _.showInfoNewGames(newGames),
                   );
                 },
                 itemCount: _.newGames.length,
